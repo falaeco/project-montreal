@@ -1,0 +1,15 @@
+<% include partials/header %>
+<div class="container">
+    <h1> Submit a proposition </h1>
+    <br>
+    <form action="/addtolist" method="post">
+        <p>Titre</p>
+        <input type="text" class="form-control" name="title" placeholder="Enter a title">
+        <p>Auteur</p>
+        <input type="text" class="form-control" name="author" placeholder="Who are you?">
+        <p>Description</p>
+        <textarea class="form-control" name="description" placeholder="add a description" rows="3"></textarea>
+        <button>LET ME ADD</button>
+    </form>
+</div>
+<% include partials/footer %>

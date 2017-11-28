@@ -1,0 +1,10 @@
+<% include partials/header %>
+
+<div class="container">
+    <h1> List of project </h1>
+    <% propositions.forEach(function(proposition){ %>
+        <li><a href="#"><h3><%= proposition.title %></h3> - 
+            <%= proposition.author %></a>
+        </li>
+   <% }) %>
+</div>
