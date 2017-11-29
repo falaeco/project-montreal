@@ -37,12 +37,13 @@ app.post("/addtolist", function(req, res){
     let newEntry = {
         id:  propositions.length,
         title: req.body.title,
-        author: req.body.author,
+        author: req.body.author,fes
         description: req.body.description
     };
     propositions.push(newEntry);
     res.redirect("/project-list");
-})
+});
+
 app.get("*", function(req, res){
     res.render("404");
 });
