@@ -1,10 +1,25 @@
 <% include partials/header %>
 
-<div class="container">
-    <h1> List of project </h1>
-    <% propositions.forEach(function(proposition){ %>
-        <li><a href="#"><h3><%= proposition.title %></h3> - 
-            <%= proposition.author %></a>
-        </li>
-   <% }) %>
-</div>
+    <div class="container">
+        <header class="jumbotron">
+            <h1> List of projects </h1>
+            <a name="" id="" class="btn btn-primary" href="/project-list/new" role="button">Submit something new</a>
+        </header>
+        <div class="row">
+            <% propositions.forEach(function(proposition){ %>
+                <div class="card col-md-4 col-sm-6" style="width: 20rem;">
+                    <img class="card-img-top" src="https://picsum.photos/<%=size%>/?<%=proposition.image%> ">
+                    <a href="#">
+                        <h4 class="card-title">
+                            <%= proposition.title %>
+                        </h4>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <%= proposition.author %>
+                    </h6>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+        <% include partials/footer %>
