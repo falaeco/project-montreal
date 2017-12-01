@@ -2,7 +2,7 @@
 <div class="container">
   <h1> Submit a proposition </h1>
   <br>
-  <form action="/project-list" method="post">
+  <form action="/project-list" method="POST">
     <div class="form-group">
       <label for="title">Titre/Sujet</label>
       <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Titre">
@@ -14,19 +14,26 @@
         </div>
         <div class="form-group col-md-7">
             <label for="inputEmail">Email</label>
-            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email" readonly>
+            <input type="email" class="form-control" id="inputEmail" placeholder="email" readonly>
         </div>
     </div>
     <div class="form-group">
         <label for="Description">Description</label>
         <textarea class="form-control" name="description" placeholder="add a description" rows="4"></textarea>
     </div>
-    <div class="form-group">
-        <label for="image">Ajouter une image</label>
-        <input type="file" name="image" class="form-control-file" id="imageInput" accept=".jpg, .jpeg, .png">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="image">Ajouter une image</label>
+            <input type="file" class="form-control-file" id="imageInput" accept=".jpg, .jpeg, .png">
+        </div>
+        <div class="form-group col-md-12">
+            <label for="imageUrl">Image url</label>
+            <input type="text" class="form-control" name="image" id="imageURLInput" placeholder="image=#">
+        </div>
     </div>
+    
     <div class="form-group">
-        <button type="button" class="btn btn-primary btn-lg btn-block">LET ME ADD</button>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="LET ME ADD!!">
     </div>
   </form>
   <a href="/">Go back</a>
