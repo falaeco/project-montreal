@@ -1,25 +1,22 @@
 <% include partials/header %>
 
-    <div class="container">
-        <header class="jumbotron">
-            <h1> List of projects </h1>
-            <a name="" id="" class="btn btn-primary" href="/project-list/new" role="button">Submit something new</a>
-        </header>
-        <div class="row">
-            <% propositions.forEach(function(proposition){ %>
-                <div class="card col-md-4 col-sm-6" style="width: 20rem;">
-                    <img class="card-img-top" src="https://picsum.photos/<%=size%>/?<%=proposition.image%> ">
-                    <a href="#">
-                        <h4 class="card-title">
-                            <%= proposition.title %>
-                        </h4>
-                    </a>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                        <%= proposition.author %>
-                    </h6>
-                </div>
-            <% }) %>
+<div class="container">
+  <header class="jumbotron">
+    <h1> List of projects </h1>
+      <a name="" id="" class="btn btn-primary" href="/project-list/new" role="button">Submit something new</a>
+  </header>
+    <div class="row">
+      <% propositions.forEach(function(proposition){ %>
+        <!-- fixed width, maybe with display: flex-wrap: wrap-->
+        <div class="card col-6 col-md-4 col-lg-3">
+          <img class="card-img-top" src="https://picsum.photos/<%=size%>?<%=proposition.image%> ">
+          <div class="class-body">
+            <a href="#"><h4 class="card-title"><%= proposition.title %></h4></a>
+            <h6 class="card-subtitle mb-2 text-muted"><%= proposition.author %></h6>
+          </div>        
         </div>
+      <% }) %>
     </div>
+</div>
 
-        <% include partials/footer %>
+  <% include partials/footer %>
