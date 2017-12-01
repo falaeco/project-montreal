@@ -1,15 +1,34 @@
 <% include partials/header %>
 <div class="container">
-    <h1> Submit a proposition </h1>
-    <br>
-    <form action="/project-list" method="post">
-        <p>Titre</p>
-        <input type="text" class="form-control" name="title" placeholder="Enter a title">
-        <p>Auteur</p>
-        <input type="text" class="form-control" name="author" placeholder="Who are you?">
-        <p>Description</p>
-        <textarea class="form-control" name="description" placeholder="add a description" rows="3"></textarea>
-        <button>LET ME ADD</button>
-    </form>
+  <h1> Submit a proposition </h1>
+  <br>
+  <form action="/project-list" method="post">
+    <div class="form-group">
+      <label for="title">Titre/Sujet</label>
+      <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Titre">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-5">
+            <label for="Auteur">Auteur</label>
+            <input type="text" name="author" class="form-control" id="inputAuthor" placeholder="Prénom et nom">
+        </div>
+        <div class="form-group col-md-7">
+            <label for="inputEmail">Email</label>
+            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email" readonly>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <textarea class="form-control" name="description" placeholder="add a description" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="image">Ajouter une image</label>
+        <input type="file" name="image" class="form-control-file" id="imageInput" accept=".jpg, .jpeg, .png">
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-primary btn-lg btn-block">LET ME ADD</button>
+    </div>
+  </form>
+  <a href="/">Go back</a>
 </div>
 <% include partials/footer %>
