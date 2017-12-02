@@ -1,5 +1,14 @@
 <% include partials/header %>
-<h1>Show template</h1>
+<div class="container">
+  <h1>Show template</h1>
 
-<p><%=proposition.title%></p>
+  <h4><%=proposition.title%></h4>
+  <p><%=proposition.description%></p>
+  <br>
+  <% proposition.comments.forEach(function(comment){ %>
+      <p><%= comment.text %></p>
+      <p><%= comment.author %></p>
+  <% }) %>
+</div>
+
 <% include partials/footer %>

@@ -1,8 +1,13 @@
+//Import statement
 let express = require('express'),
     app = express(),
     bodyparser = require('body-parser'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    Proposition = require('./models/proposition'),
+    seedData = require('./seeds');
 
+seedData();
+//Database initialization
 let uri = 'mongodb://nicph:cart351@ds127428.mlab.com:27428/pmontrealdb';
 mongoose.connect(uri, { useMongoClient: true});
 mongoose.Promise = global.Promise;
@@ -13,16 +18,6 @@ db.once('open', function(){
 });
 app.use(bodyparser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
-
-//--- SCHEMA SETUP -----
-let propositionSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-    author: String,
-    description: String
-});
-
-let Proposition = mongoose.model('Proposition', propositionSchema);
 
 //for temporary lorem picsum
 //https://picsum.photos/200/300?image=0
@@ -69,7 +64,7 @@ app.get("/project-list/new", function(req, res){
 //SHOW - show more information about a project
 app.get("/project/:id", function(req, res){
     //find the project with the provided id
-    Proposition.findById(req.params.id, function(e, foundProposition){
+    Proposition.findById(req.params.id).populate("comments").exec(function(e, foundProposition){
         if(e){
             console.log(e);
         } else {
