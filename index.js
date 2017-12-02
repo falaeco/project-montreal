@@ -69,9 +69,14 @@ app.get("/project-list/new", function(req, res){
 //SHOW - show more information about a project
 app.get("/project/:id", function(req, res){
     //find the project with the provided id
-    //render the show template with that project
-    res.send('Show post for an individual project');
-})
+    Proposition.findById(req.params.id, function(e, foundProposition){
+        if(e){
+            console.log(e);
+        } else {
+            res.render('show', {proposition: foundProposition});
+        }
+    });
+});
 
 
 
