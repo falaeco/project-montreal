@@ -2,7 +2,16 @@
 <div class="container">
   <h1> Submit a proposition </h1>
   <br>
-  <form action="/project-list" method="POST">
+  <form action="/project-list" method="post">
+    <div class="form-row justify-content-center">
+        <div class="form-check col-3">
+            <label for="Amélioration" class="check-label"><input type="radio" name="type" class="form-check-input">Amélioration</label> 
+        </div>
+        <div class="form-check col-3">
+            <label for="Proposition" class="check-label"><input type="radio" name="type" class="form-check-input">Proposition</label>  
+        </div>
+    </div>
+
     <div class="form-group">
       <label for="title">Titre/Sujet</label>
       <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Titre">
@@ -21,6 +30,15 @@
         <label for="Description">Description</label>
         <textarea class="form-control" name="description" placeholder="add a description" rows="4"></textarea>
     </div>
+
+    <div class="form-group">
+        <label for="image URL">Image URL</label>
+        <input type="text" name="image" class="form-control" id="imageURLinput" placeholder="image=#">
+    </div>
+    <div class="form-group">
+        <label for="image">Ajouter une image</label>
+        <input type="file" name="imagefile" class="form-control-file" id="imageInput" accept=".jpg, .jpeg, .png">
+
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="image">Ajouter une image</label>
@@ -30,10 +48,15 @@
             <label for="imageUrl">Image url</label>
             <input type="text" class="form-control" name="image" id="imageURLInput" placeholder="image=#">
         </div>
+
     </div>
     
     <div class="form-group">
+
+       
+
         <input type="submit" class="btn btn-primary btn-lg btn-block" value="LET ME ADD!!">
+
     </div>
   </form>
   <a href="/">Go back</a>

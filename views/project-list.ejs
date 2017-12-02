@@ -11,8 +11,9 @@
         <div class="card col-6 col-md-4 col-lg-3">
           <img class="card-img-top" src="https://picsum.photos/<%=size%>?<%=proposition.image%> ">
           <div class="class-body">
-            <a href="#"><h4 class="card-title"><%= proposition.title %></h4></a>
+            <h5 class="card-title"><%= proposition.title %></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= proposition.author %></h6>
+            <a href="/project/<%= proposition._id %>" class="card-link">Voir plus</a>
           </div>        
         </div>
       <% }) %>
