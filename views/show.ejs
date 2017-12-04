@@ -3,17 +3,15 @@
   <h1>Show template</h1>
 
   <h4><%=proposition.title%></h4>
-  <p><%if (proposition.type === 'PROP'){%><%= "Proposition" %>
-    <%} else { %><%= "Improvement"%><%}%></p>
   <p><%=proposition.description%></p>
   <br>
   <div id="disqus_thread"></div>
   <script>
     //!! -- TODO UNCOMMENT COMMENT SECTION WHEN DONE
-    /*
+    /**
     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-    */
+    
     var disqus_config = function () {
     this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
     this.page.identifier = "<%= proposition.id %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
@@ -25,7 +23,7 @@
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();
-    
+    */
   </script>
   <noscript>Please enable JavaScript to view the
     <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>

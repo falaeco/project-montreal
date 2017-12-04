@@ -1,4 +1,3 @@
-//BACKUP FILE
 let mongoose = require('mongoose');
 
 let commentSchema = mongoose.Schema({
