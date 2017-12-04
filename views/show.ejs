@@ -1,10 +1,11 @@
-<% include partials/header %>
+<% include partials/header2 %>
 <div class="container">
-  <h1>Show template</h1>
-
-  <h4><%=proposition.title%></h4>
+  <h1><%=proposition.title%></h1>
   <p><%=proposition.description%></p>
   <br>
+  <img src="https://picsum.photos/
+  <%=size%>?
+    <%=proposition.image%>">
   <div id="disqus_thread"></div>
   <script>
     //!! -- TODO UNCOMMENT COMMENT SECTION WHEN DONE
@@ -30,4 +31,4 @@
   </noscript>
 </div>
 
-<% include partials/footer %>
+<% include partials/footer2 %>

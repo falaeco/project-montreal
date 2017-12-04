@@ -18,3 +18,12 @@
 #header-form{
   margin: 2rem 0;
 }
+
+.marker {
+  background-image: url('https://image.flaticon.com/icons/png/512/33/33622.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}

@@ -1,9 +1,10 @@
 <% include partials/header2 %>
-
+<div class="container-fluid" id="map"></div>
 <div class="container">
-  <header class="jumbotron">
-    <h1> List of projects </h1>
-      <a name="" id="" class="btn btn-primary" href="/project-list/new" role="button">Submit something new</a>
+  <header class="jumbotron justify-content-center">
+    <h1 class="text-center"> List of projects </h1>
+    <br>
+      <p class="text-center"><a name="" id="" class="btn btn-primary" href="/project-list/new" role="button">Submit something new</a></p>
   </header>
     <div class="row">
       <% propositions.forEach(function(proposition){ %>
@@ -26,5 +27,220 @@
       <% }) %>
     </div>
 </div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZmFsYWVjbyIsImEiOiJjamFrYmVoY3IyaGx5MzJvMjE1d2s1dHJzIn0.-2tWYSs1iMpDlYGte2ObwQ';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/falaeco/cjaokgoxsfkie2rsue8nnw5vy',
+    center: [-73.628817, 45.498973],
+    minZoom: 8,
+    zoom: 11
+  });
+  var geojson = {
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.576521,
+              45.49917
+            ],
+            "type": "Point"
+          },
+          "id": "15bbd22c1316521329114e358d1fb0fa"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.584666,
+              45.492095
+            ],
+            "type": "Point"
+          },
+          "id": "213bade1ac0c4b9f39a6ed9a84d344e0"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.571081,
+              45.5289
+            ],
+            "type": "Point"
+          },
+          "id": "28d9d9ebccb14af4acf74f53eeeb4759"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.616019,
+              45.467038
+            ],
+            "type": "Point"
+          },
+          "id": "2a0239ea0f1a612a44279f0d60d305a1"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.560218,
+              45.515421
+            ],
+            "type": "Point"
+          },
+          "id": "381e7caf8a071b996f387a4994b319e1"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.547378,
+              45.544538
+            ],
+            "type": "Point"
+          },
+          "id": "5734e9eef4106bc69bfca04542cd145c"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.575452,
+              45.500246
+            ],
+            "type": "Point"
+          },
+          "id": "59eb570ad85090a5df0272aa3a9374de"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.568372,
+              45.508523
+            ],
+            "type": "Point"
+          },
+          "id": "5fa68ed4b17c07fc28defb6b4d6b7ff7"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.572072,
+              45.503539
+            ],
+            "type": "Point"
+          },
+          "id": "6f3f19c429c3b6572662c7bc6377512e"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.646795,
+              45.442086
+            ],
+            "type": "Point"
+          },
+          "id": "8010539828377afcef653237370a7f61"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.578904,
+              45.497212
+            ],
+            "type": "Point"
+          },
+          "id": "8bdc81c1e7e414d4aa1d0bd965d14822"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.570558,
+              45.483046
+            ],
+            "type": "Point"
+          },
+          "id": "ac363dad81a244e4fd4ab43fbb80a262"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.590938,
+              45.490553
+            ],
+            "type": "Point"
+          },
+          "id": "b9e48934deec8c4724e5e7584d32acca"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.594365,
+              45.482675
+            ],
+            "type": "Point"
+          },
+          "id": "d00b738a115628422009bf3a9a432829"
+        },
+        {
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "coordinates": [
+              -73.575812,
+              45.493053
+            ],
+            "type": "Point"
+          },
+          "id": "d6acf53fccb5b8e89aba6277f8be3075"
+        }
+      ],
+        "type": "FeatureCollection"
+    }
+  geojson.features.forEach(function (marker) {
 
+      // create a HTML element for each feature
+      var el = document.createElement('div');
+      el.className = 'marker';
+
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+    });
+  map.addControl(new mapboxgl.NavigationControl());
+  /*
+  var marker = new mapboxgl.Marker();
+  marker.setLngLat([0, 0]);
+  marker.addTo(map);
+
+  map.on('click', function (e) {
+    marker.setLngLat(e.lngLat);
+  })
+  */
+</script>
   <% include partials/footer2 %>
