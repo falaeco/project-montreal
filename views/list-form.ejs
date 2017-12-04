@@ -1,13 +1,15 @@
-<% include partials/header %>
-<div class="container">
-  <h1> Submit a proposition </h1>
+<% include partials/header2 %>
+<div class="container-fluid" id="map"></div>
+<div class="container" style:"margin-bottom: 2em">
+  <h1 class="text-center" id="header-form"> Submit a proposition </h1>
+
   <br>
   <form action="/project-list" method="post">
-    <div class="form-row justify-content-center">
-        <div class="form-check col-3">
+    <div class="form-row">
+        <div class="form-check col col-md-3 container">
             <label for="Amélioration" class="check-label"><input type="radio" name="" class="form-check-input">Amélioration</label> 
         </div>
-        <div class="form-check col-3">
+        <div class="form-check col col-md-3 container">
             <label for="Proposition" class="check-label"><input type="radio" name="" class="form-check-input">Proposition</label>  
         </div>
     </div>
@@ -34,13 +36,28 @@
         <input type="text" name="image" class="form-control" id="imageURLinput" placeholder="image=#">
     </div>
     <div class="form-group">
-        <label for="image">Ajouter une image</label>
-        <input type="file" name="imagefile" class="form-control-file" id="imageInput" accept=".jpg, .jpeg, .png">
-    </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary btn-lg btn-block">LET ME ADD</button>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Soumettre">
     </div>
   </form>
   <a href="/">Go back</a>
 </div>
-<% include partials/footer %>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZmFsYWVjbyIsImEiOiJjamFrYmVoY3IyaGx5MzJvMjE1d2s1dHJzIn0.-2tWYSs1iMpDlYGte2ObwQ';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/falaeco/cjaokgoxsfkie2rsue8nnw5vy',
+            center: [-73.628817, 45.498973],
+            minZoom: 8,
+            zoom: 11
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+        var marker = new mapboxgl.Marker();
+        marker.setLngLat([0, 0]);
+        marker.addTo(map);
+
+        map.on('click', function (e) {
+            marker.setLngLat(e.lngLat);
+        })
+</script>
+<% include partials/footer2 %>

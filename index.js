@@ -18,6 +18,7 @@ db.once('open', function(){
 });
 app.use(bodyparser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 //for temporary lorem picsum
 //https://picsum.photos/200/300?image=0

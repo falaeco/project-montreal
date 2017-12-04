@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include partials/header2 %>
 
 <div class="container">
   <header class="jumbotron">
@@ -13,6 +13,13 @@
           <div class="class-body">
             <h5 class="card-title"><%= proposition.title %></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= proposition.author %></h6>
+            <p class="card-text">
+              <% if (proposition.description.length > 200) { %>
+                <%= proposition.description.substring(0,200) %>
+               <% } else { %>
+                <%= proposition.description %>
+              <% } %>
+            </p>
             <a href="/project/<%= proposition._id %>" class="card-link">Voir plus</a>
           </div>        
         </div>
@@ -20,4 +27,4 @@
     </div>
 </div>
 
-  <% include partials/footer %>
+  <% include partials/footer2 %>
