@@ -4,7 +4,8 @@
   "description": "Project montreal est une plateforme ou les citoyens peuvent proposer de nouvelles idée ou amélioration à leur ville et discuter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node index.js"
   },
   "keywords": [
     "Project",
