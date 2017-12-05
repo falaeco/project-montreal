@@ -41,8 +41,8 @@ let propositions = [
   {
     title: 'Grafitis walls on place des arts',
     type: 'PROP',
-    image: 'image=1052',
-    author: 'https://wall2wallmtl.files.wordpress.com/2015/08/new1508-belhumeur-duguay-mu.jpg?w=470&h=313',
+    image: 'https://wall2wallmtl.files.wordpress.com/2015/08/new1508-belhumeur-duguay-mu.jpg?w=470&h=313',
+    author: 'Jérémie Décarie',
     description: "The city could install some permanent walls dedicated to grafiti where anybody could exerce and paint on it. There are too fews of these places in Montreal, and we can see that they are very popular."
   },
   {
